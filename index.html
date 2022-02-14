@@ -11,69 +11,70 @@
   <div class="page__container">
     <h1>Math puzzles with icons</h1>
     <form class="form">
-      <div>
+      <!-- <div> -->
         <fieldset>
           <legend>Expressions</legend>
-          <div id="enteredExpressions"></div>
-          <div class="input input_fake">
-            <p>Enter expression...</p>
+          <div class="expressions" id="expressions"></div>
+          <div id="ui">
+            <button class="ui-button" type="button" id="button_create">Create expresion</button>
+            <button class="ui-button" type="button" id="button_cancel" disabled>Cancel</button>
+            <button class="ui-button" type="button" id="button_submit" >Calculate</button>
           </div>
-          <button class="button button_submit" type="button">Calculate</button>
         </fieldset>
-      </div>
-      <div>
-        <fieldset class="buttons buttons_icons">
+      <!-- </div> -->
+      <div class="keyboard" id="keyboard">
+        <fieldset>
           <legend>Icons</legend>
-          <button class="button button_icon">
-            <img src="./images/image_01.png" alt="icon 01" class="button__icon" data-id="icon-1">
+          <button class="button button_icon" data-id="icon-1">
+            <img src="./images/image_01.png" alt="icon 01" class="button__icon">
           </button>
-          <button class="button button_icon">
-            <img src="./images/image_02.png" alt="icon 02" class="button__icon" data-id="icon-2">
+          <button class="button button_icon" data-id="icon-2">
+            <img src="./images/image_02.png" alt="icon 02" class="button__icon">
           </button>
-          <button class="button button_icon">
-            <img src="./images/image_03.png" alt="icon 03" class="button__icon" data-id="icon-3">
+          <button class="button button_icon" data-id="icon-3">
+            <img src="./images/image_03.png" alt="icon 03" class="button__icon">
           </button>
-          <button class="button button_icon">
-            <img src="./images/image_04.png" alt="icon 04" class="button__icon" data-id="icon-4">
+          <button class="button button_icon" data-id="icon-4">
+            <img src="./images/image_04.png" alt="icon 04" class="button__icon">
           </button>
-          <button class="button button_icon">
-            <img src="./images/image_05.png" alt="icon 05" class="button__icon" data-id="icon-5">
+          <button class="button button_icon" data-id="icon-5">
+            <img src="./images/image_05.png" alt="icon 05" class="button__icon">
           </button>
-          <button class="button button_icon">
-            <img src="./images/image_06.png" alt="icon 06" class="button__icon" data-id="icon-6">
+          <button class="button button_icon" data-id="icon-6">
+            <img src="./images/image_06.png" alt="icon 06" class="button__icon">
           </button>
-          <button class="button button_icon">
-            <img src="./images/image_07.png" alt="icon 07" class="button__icon" data-id="icon-7">
+          <button class="button button_icon" data-id="icon-7">
+            <img src="./images/image_07.png" alt="icon 07" class="button__icon">
           </button>
-          <button class="button button_icon">
-            <img src="./images/image_08.png" alt="icon 08" class="button__icon" data-id="icon-8">
+          <button class="button button_icon" data-id="icon-8">
+            <img src="./images/image_08.png" alt="icon 08" class="button__icon">
           </button>
-          <button class="button button_icon">
-            <img src="./images/image_09.png" alt="icon 09" class="button__icon" data-id="icon-9">
+          <button class="button button_icon" data-id="icon-9">
+            <img src="./images/image_09.png" alt="icon 09" class="button__icon">
           </button>
-          <button class="button button_icon">
-            <img src="./images/image_10.png" alt="icon 10" class="button__icon" data-id="icon-10">
+          <button class="button button_icon" data-id="icon-10">
+            <img src="./images/image_10.png" alt="icon 10" class="button__icon">
           </button>
-          <button class="button button_icon">
-            <img src="./images/image_11.png" alt="icon 11" class="button__icon" data-id="icon-11">
+          <button class="button button_icon" data-id="icon-11">
+            <img src="./images/image_11.png" alt="icon 11" class="button__icon">
           </button>
-          <button class="button button_icon">
-            <img src="./images/image_12.png" alt="icon 12" class="button__icon" data-id="icon-12">
+          <button class="button button_icon" data-id="icon-12">
+            <img src="./images/image_12.png" alt="icon 12" class="button__icon">
           </button>
-          <button class="button button_icon">
-            <img src="./images/image_13.png" alt="icon 13" class="button__icon" data-id="icon-13">
+          <button class="button button_icon" data-id="icon-13">
+            <img src="./images/image_13.png" alt="icon 13" class="button__icon">
           </button>
-          <button class="button button_icon">
-            <img src="./images/image_14.png" alt="icon 14" class="button__icon" data-id="icon-14">
+          <button class="button button_icon" data-id="icon-14">
+            <img src="./images/image_14.png" alt="icon 14" class="button__icon">
           </button>
-          <button class="button button_icon">
-            <img src="./images/image_15.png" alt="icon 15" class="button__icon" data-id="icon-15">
+          <button class="button button_icon" data-id="icon-15">
+            <img src="./images/image_15.png" alt="icon 15" class="button__icon">
           </button>
-          <button class="button button_icon">
-            <img src="./images/image_16.png" alt="icon 16" class="button__icon" data-id="icon-16">
+          <button class="button button_icon" data-id="icon-16">
+            <img src="./images/image_16.png" alt="icon 16" class="button__icon">
           </button>
         </fieldset>
-        <fieldset class="buttons buttons_symbols">
+        <fieldset>
           <legend>Symbols</legend>
           <button class="button button_symbol" data-id="symbol-1">+</button>
           <button class="button button_symbol" data-id="symbol-2">-</button>
@@ -82,7 +83,7 @@
           <button class="button button_symbol" data-id="symbol-5">=</button>
           <button class="button button_symbol" data-id="symbol-6">??</button>
         </fieldset>
-        <fieldset class="buttons buttons_numbers">
+        <fieldset>
           <legend>Numbers</legend>
           <button class="button button_symbol" data-id="number-1">1</button>
           <button class="button button_symbol" data-id="number-2">2</button>
@@ -96,11 +97,22 @@
           <button class="button button_symbol" data-id="number-0">0</button>
         </fieldset>
       </div>
-
+      
     </form>
     <div id="result"></div>
   </div>
 
+  <template id="expressionTemplate">
+    <div class="element">
+      <div class="expression"></div>
+      <div class="buttons">
+        <button class="ui-button button_confirm">Confirm</button>
+        <button class="ui-button button_edit">Edit</button>
+        <button class="ui-button button_deleteLast">Delete</button>
+      </div>
+    </div>
+  </template>
+  
   <script type="module" src="./index.js"></script>
 </body>
 </html>
