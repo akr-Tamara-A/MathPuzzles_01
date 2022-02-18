@@ -18,4 +18,10 @@ export class Expressions {
     this._node.append(elem);
   }
 
+  /** */
+  deleteItem(id) {
+    console.log(id);
+    document.querySelector(`#expression_${id}`).remove();
+  }
+
 };
