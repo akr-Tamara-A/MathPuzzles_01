@@ -1,6 +1,5 @@
 export class Icon {
-  constructor(node, id) {
-    this._node = document.querySelector(node);
+  constructor(id) {
     this._id = id;
     this._iconType;
     this._iconId;
@@ -15,27 +14,26 @@ export class Icon {
   }
 
   /** */
-  insertIcon() {
+  insertIcon(node) {
     this._defineIcon();
     const icon = document.createElement('div');
     icon.setAttribute('class', 'icon');
     
-    console.log(this._iconType);
-
     if (this._iconType == 'icon') {
       let elem = document.createElement('img');
       elem.setAttribute('src', `./images/image_${this._iconId}.png`);
       elem.setAttribute('alt', `icon ${this._iconId}`);
       icon.append(elem);
     } else if (this._iconType == 'symbol') {
-      console.log(this._symbolsData[this._iconId]);
       icon.innerText = this._symbolsData[this._iconId];
     } else {
       icon.innerText = this._iconId;
     }
 
-
-    this._node.append(icon);
+    document
+        .querySelector(`#expression_${node}`)
+        .querySelector('.expression')
+        .append(icon);
   }
 
   /** */

@@ -20,8 +20,13 @@ export class Expressions {
 
   /** */
   deleteItem(id) {
-    console.log(id);
     document.querySelector(`#expression_${id}`).remove();
+  }
+
+  /** */
+  editElem(id, data) {
+    console.log(this.data[id]);
+    console.log(data);
   }
 
 };

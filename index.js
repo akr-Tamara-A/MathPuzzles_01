@@ -2,12 +2,14 @@ import { Keyboard } from "./components/Keyboard.js";
 import { Expression } from "./components/Expression.js";
 import { Expressions } from "./components/Expressions.js";
 import { App } from "./components/App.js";
+import { Icon } from "./components/Icon.js";
 
 const buttonCreateExpr = document.querySelector('#button_create');
 const buttonCancelExpr = document.querySelector('#button_cancel');
 const buttonSubmitExpr = document.querySelector('#button_submit');
 
-let curId = '';
+let curId;
+let arr = [];
 
 /** */
 const app = new App();
@@ -16,10 +18,11 @@ const app = new App();
 const keyboard = new Keyboard(
   document.querySelector('#keyboard'),
   (iconId) => {
-    console.log(iconId);
     app.recordNewData(iconId);
+    const icon = new Icon(iconId);
+    icon.insertIcon(curId);
   }
-  );
+);
 
 /** */
 const expressionsList = new Expressions({
@@ -43,21 +46,17 @@ function createNewExpression(id) {
         buttonCancelExpr.setAttribute('disabled', true);
         buttonCreateExpr.removeAttribute('disabled');
         app.recordNewData(id);
+        keyboard.removeEventListeners();
       },
       handleEdit: () => {
-        console.log('edit');
+        curId = id;
       },
       handleDelete: () => {
         keyboard.removeEventListeners();
         expressionsList.deleteItem(id);
       },
-      handleGetIcons: () => {
-        
-      }
-    },
-    // keyboard.showId()
+    }
   );
-  expression.getElements(id);
   return expression;
 };
 
@@ -69,10 +68,12 @@ buttonCreateExpr.addEventListener('click', (e) => {
   buttonCancelExpr.removeAttribute('disabled');
 
   const expression = createNewExpression(Expression.ammount);
-  const expressionElement = expression.createExpression(Expression.ammount);
+  const expressionElement = expression.createExpression();
   expressionsList.setItem(expressionElement);
 
+  arr.push([]);
   keyboard.setEventListeners();
+  curId = Expression.ammount - 1;
 });
 
 /** */

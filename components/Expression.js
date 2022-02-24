@@ -1,13 +1,13 @@
 export class Expression {
-  constructor(selector, id, handlers, data) {
+  constructor(selector, id, handlers) {
     this._templateSelector = selector;
     this._id = id;
+    console.log(id);
     this._handleConfirm = handlers.handleConfirm;
     this._handleEdit = handlers.handleEdit;
     this._handleDelete = handlers.handleDelete;
-    this._handleGetIcons = handlers._handleGetIcons;
-    this._data = data;
     this._expression;
+    this._exprId;
   }
 
   static ammount = 0;
@@ -26,15 +26,15 @@ export class Expression {
   createExpression() {
     this._expression = this._getTemplate();
     this._setEventListeners();
-    this._expression.querySelector('.expression').textContent = this._data;
     this._expression.id = `expression_${Expression.ammount}`;
+    this._exprId = this._expression.id;
     Expression.ammount = Expression.ammount + 1;
     return this._expression;
   }
 
   /** */
-  getElements(data) {
-    console.log(data);
+  getExpressionId() {
+    return this._exprId;
   }
 
 
@@ -44,21 +44,36 @@ export class Expression {
       e.preventDefault();
       e.stopPropagation();
       this._handleConfirm();
-      e.target.setAttribute('disabled', true);
+      this._expression.querySelector('.button_confirm').disabled = true;
+      this._expression.querySelector('.button_edit').disabled = false;
+      this._expression.querySelector('.button_delete').disabled = false;
     });
     this._expression.querySelector('.button_edit').addEventListener('click', (e) => {
       e.preventDefault();
       e.stopPropagation();
       this._handleEdit();
+      this._expression.querySelector('.button_confirm').disabled = false;
+      this._expression.querySelector('.button_edit').disabled = true;
+      this._expression.querySelector('.button_delete').disabled = true;
     });
-    this._expression.querySelector('.button_deleteLast').addEventListener('click', (e) => {
+    this._expression.querySelector('.button_delete').addEventListener('click', (e) => {
       e.preventDefault();
       e.stopPropagation();
       this._handleDelete();
     });
   }
 
+  /** */
+  _insertIcon(id) {
+    const node = this.expression.querySelector('.expression');
+    node.append(this._createIcon(id));
+  }
 
-
+  /** */
+  _createIcon(id) {
+    const elem = document.createElement('img');
+    elem.src = `./images/image_${id}.png`;
+    return elem;
+  }
 
 };
