@@ -104,17 +104,18 @@
 
 .icon {
   height: 60px;
-  width: 60px;
   font-size: 32px;
   font-weight: bold;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 0 2px;
 }
 
 .icon img {
-  width: 100%;
+  width: 60px;
   height: 100%;
+  margin: 0 -2px;
 }
 
 #result {
