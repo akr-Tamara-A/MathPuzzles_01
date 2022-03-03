@@ -9,7 +9,6 @@ const buttonCancelExpr = document.querySelector('#button_cancel');
 const buttonSubmitExpr = document.querySelector('#button_submit');
 
 let curId;
-let arr = [];
 
 /** */
 const app = new App();
@@ -18,7 +17,7 @@ const app = new App();
 const keyboard = new Keyboard(
   document.querySelector('#keyboard'),
   (iconId) => {
-    app.recordNewData(iconId);
+    app.recordData(iconId, curId);
     const icon = new Icon(iconId);
     icon.insertIcon(curId);
   }
@@ -45,7 +44,6 @@ function createNewExpression(id) {
       handleConfirm: () => {
         buttonCancelExpr.setAttribute('disabled', true);
         buttonCreateExpr.removeAttribute('disabled');
-        app.recordNewData(id);
         keyboard.removeEventListeners();
       },
       handleEdit: () => {
@@ -71,7 +69,6 @@ buttonCreateExpr.addEventListener('click', (e) => {
   const expressionElement = expression.createExpression();
   expressionsList.setItem(expressionElement);
 
-  arr.push([]);
   keyboard.setEventListeners();
   curId = Expression.ammount - 1;
 });
