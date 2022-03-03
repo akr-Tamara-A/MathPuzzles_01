@@ -2,7 +2,6 @@ export class Expression {
   constructor(selector, id, handlers) {
     this._templateSelector = selector;
     this._id = id;
-    console.log(id);
     this._handleConfirm = handlers.handleConfirm;
     this._handleEdit = handlers.handleEdit;
     this._handleDelete = handlers.handleDelete;
