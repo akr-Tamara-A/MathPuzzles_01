@@ -18,19 +18,24 @@ export class Icon {
 
     const data = this._defineIcon();
     let iconNode;
+    let blockNode;
     
     if (data.type == 'icon') {
       iconNode = this._handleIconType(icon, data.id);
+      blockNode = document.querySelector(`#expression_${node}`).querySelector('.block_icons');
     } else if (data.type == 'symbol') {
       iconNode = this._handleSymbolType(icon, data.id);
+      if (data.id == 5) {
+        blockNode = document.querySelector(`#expression_${node}`).querySelector('.block_equal');
+      } else {
+        blockNode = document.querySelector(`#expression_${node}`).querySelector('.block_icons');
+      }
     } else {
       iconNode = this._handleNumberType(icon, data.id);
+      blockNode = document.querySelector(`#expression_${node}`).querySelector('.block_number');
     }
 
-    document
-    .querySelector(`#expression_${node}`)
-    .querySelector('.expression')
-    .append(iconNode);
+    blockNode.append(iconNode);
   }
 
   /** */

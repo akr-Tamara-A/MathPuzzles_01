@@ -55,10 +55,6 @@
   gap: 10px;
 }
 
-.ui-button {
-
-}
-
 .buttons_icons {
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 }
@@ -109,19 +105,33 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0 2px;
 }
 
 .icon img {
   width: 60px;
   height: 100%;
-  margin: 0 -2px;
 }
 
 #result {
-  display: flex;;
+  display: flex;
 }
 
 .expression {
+  width: 75%;
+  display: grid;
+  grid-template-columns: auto 30px 100px;
+}
+
+.block_icons,
+.block_equal,
+.block_number {
   display: flex;
+}
+
+.block_icons {
+  justify-content: end;
+}
+
+.block_equal {
+  justify-content: center;
 }
