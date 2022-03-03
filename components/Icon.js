@@ -27,6 +27,8 @@ export class Icon {
       iconNode = this._handleSymbolType(icon, data.id);
       if (data.id == 5) {
         blockNode = document.querySelector(`#expression_${node}`).querySelector('.block_equal');
+      } else if (data.id == 6) {
+        blockNode = document.querySelector(`#expression_${node}`).querySelector('.block_number');
       } else {
         blockNode = document.querySelector(`#expression_${node}`).querySelector('.block_icons');
       }
